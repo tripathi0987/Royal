@@ -1,12 +1,15 @@
 <project default="runtests">
-	<property name="version" value="2.260.16.0"/>
 	<property environment="env"/>
-	<property name="provar.home" value="C:/Program Files/Provar/"/>
+	<property name="provar.home" value="C:/Program Files/Provar/Provar 2.6.3/"/>
 	<property name="testproject.home" value=".."/>
 	<property name="testproject.results" value="../ANT/Results"/>
-
+	<property name="secrets.password" value="${env.ProvarSecretsPassword}"/>
+	<property name="testenvironment.secretspassword" value="${env.ProvarSecretsPassword_EnvName}"/>
+	
+	
 	<taskdef name="Provar-Compile" classname="com.provar.testrunner.ant.CompileTask" classpath="${provar.home}/ant/ant-provar.jar"/>
 	<taskdef name="Run-Test-Case" classname="com.provar.testrunner.ant.RunnerTask" classpath="${provar.home}/ant/ant-provar.jar;${provar.home}/ant/ant-provar-bundled.jar;${provar.home}/ant/ant-provar-sf.jar"/>
+	<taskdef name="Test-Cycle-Report" classname="com.provar.testrunner.ant.TestCycleReportTask" classpath="${provar.home}/ant/ant-provar.jar;${provar.home}/ant/ant-provar-bundled.jar;${provar.home}/ant/ant-provar-sf.jar"/>
 	
 	<target name="runtests">
 	
@@ -21,20 +24,20 @@
 				webBrowserConfiguration="Full Screen"
 				webBrowserProviderName="Desktop"
 				webBrowserDeviceName="Full Screen" 
+				excludeCallableTestCases="false" 
+				salesforceMetadataCache="Reload" 
+				projectCachePath="../../.provarCaches1"
 				testOutputlevel="BASIC" 
 				pluginOutputlevel="WARNING"
 				stopTestRunOnError="false"
-			        salesforceMetadataCache="Reload"
-			        projectCachePath="../../.provarCaches1"
-			       
-		>
-			<fileset dir="../plans/Test Plan/Regression"></fileset>
-			<planFeature name="PDF" type="OUTPUT" enabled="true"/>
-			<planFeature name="PIECHART" type="OUTPUT" enabled="true"/>
-			<planFeature name="EMAIL" type="NOTIFICATION" enabled="true"/>
+				secretsPassword="${secrets.password}"
+				testEnvironmentSecretsPassword="${testenvironment.secretspassword}"
+				invokeTestRunMonitor="true"
+				>
+		
+			<fileset dir="../tests/Regression Suite - Advisor CRM/Lead and referral management/Sprint 2"><include name="S2_CRMDFORCE-45_TC_01-45_TC_02.testcase"/></fileset>
 
 		</Run-Test-Case>
 
 	</target>
-
 </project>
