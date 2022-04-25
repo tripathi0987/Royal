@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testProject selectedBrowserProviderDeviceName="Full Screen" selectedBrowserProviderName="Desktop">
+  <title>/SalesforceAutomation/.testproject</title>
+  <configPath>config</configPath>
+  <testsPath>tests</testsPath>
+  <testPlansPath>plans</testPlansPath>
+  <templatesPath>templates</templatesPath>
+  <sourcePath>src</sourcePath>
+  <secureStoragePath>.secrets</secureStoragePath>
+  <browserDebugPort>0</browserDebugPort>
+  <environments/>
+  <connectionClasses>
+    <connectionClass name="sf">
+      <connections>
+        <connection name="Salesforce">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="a10472a0-59fd-4ae2-9870-082c7d97a353" url="sf:environment=SANDBOX;apiLoginUrl=https://rbcpcb--qa.my.salesforce.com;identityServiceUrl=https://test.salesforce.com/id/00D030000008qSvEAI/00503000001fzb0AAA;clientId={clientId};clientSecret={clientSecret};lightningMode=true;authenticationType=OAUTH;callbackUrl={callbackUrl};accessToken={accessToken};refreshToken={refreshToken}"/>
+          </connectionUrls>
+        </connection>
+        <connection id="608dce9c-8879-41c1-be22-9bd62dca2355" name="RetailUser">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="sf:user=retailuser@rbc.com.rbcpcb.qa;environment=PROD_DEV;logonAsConnection=Salesforce;lightningMode=true"/>
+          </connectionUrls>
+        </connection>
+        <connection id="10fa7116-342f-4268-997c-7f93184f1fe1" name="BFSUser">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="sf:user=bfsuser@rbc.com.rbcpcb.qa;environment=PROD_DEV;logonAsConnection=Salesforce;lightningMode=true"/>
+          </connectionUrls>
+        </connection>
+        <connection id="7a575cca-6bf7-4fc0-95d7-9f7ba63403c5" name="SystemAdmin">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="sf:user=Ashish.balure@rbc.com.rbcpcb.qa;environment=PROD_DEV;logonAsConnection=Salesforce;lightningMode=true"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="webservice">
+      <connections>
+        <connection id="fdec6486-1574-4af8-bb9a-00c94f8f75ce" name="QTestConnect">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="3027ace9-6fd7-4457-9098-85881295d0c2" url="restservice:url=https://se142978.fg.rbc.com;user=krishnendu.saha@rbc.com;password={password};authenticationType=BASIC_AUTHENTICATION">
+              <customHeaders/>
+            </connectionUrl>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+  </connectionClasses>
+  <browserConfigurations>
+    <browserConfiguration adjustBrowserWidthForChromeIde="true" browserHeight="0" browserWidth="0" name="Full Screen">
+      <summary>Full screen with Test Builder adjustment</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="768" browserHeightType="Pixels" browserWidth="1024" browserWidthType="Pixels" name="1024x768">
+      <summary>Fixed 1024x768</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="800" browserHeightType="Pixels" browserWidth="1280" browserWidthType="Pixels" name="1280x800">
+      <summary>Fixed 1280x800</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="768" browserHeightType="Pixels" browserWidth="1366" browserWidthType="Pixels" name="1366x768">
+      <summary>Fixed 1366x768</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="1080" browserHeightType="Pixels" browserWidth="1920" browserWidthType="Pixels" name="1920x1080">
+      <summary>Fixed 1920x1080</summary>
+    </browserConfiguration>
+  </browserConfigurations>
+  <browserApplications>
+    <browserApplication connectionTypes="sf" name="Salesforce1">
+      <properties>
+        <browserPlatformProperty name="browserName" platform="IOS" type="DesiredCapability" value="Safari"/>
+        <browserPlatformProperty name="browserName" platform="ANDROID" type="DesiredCapability" value="Chrome"/>
+      </properties>
+    </browserApplication>
+    <browserApplication connectionTypes="sf" name="ServiceMax FSA">
+      <properties>
+        <browserPlatformProperty name="bundleId" platform="IOS" type="DesiredCapability" value="com.servicemaxinc.svmxfieldserviceapp"/>
+        <browserPlatformProperty name="app" platform="DESKTOP" type="DesiredCapability" value="C:\\Program Files\\ServiceMax\\ServiceMax Field Service\\Laptop Mobile.exe"/>
+      </properties>
+    </browserApplication>
+  </browserApplications>
+  <browserProviders>
+    <browserProvider name="Desktop" type="SeleniumLocal">
+      <devices>
+        <browserProviderDevice name="Full Screen">
+          <properties>
+            <browserPlatformProperty name="summary" value="Full screen with Test Builder adjustment"/>
+            <browserPlatformProperty name="browserHeightType" value="Full"/>
+            <browserPlatformProperty name="browserWidthType" value="Full"/>
+            <browserPlatformProperty name="adjustBrowserWidthForChromeIde" value="true"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1024x768">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1024x768"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="768"/>
+            <browserPlatformProperty name="browserWidth" value="1024"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1280x800">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1280x800"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="800"/>
+            <browserPlatformProperty name="browserWidth" value="1280"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1366x768">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1366x768"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="768"/>
+            <browserPlatformProperty name="browserWidth" value="1366"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1920x1080">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1920x1080"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="1080"/>
+            <browserPlatformProperty name="browserWidth" value="1920"/>
+          </properties>
+        </browserProviderDevice>
+      </devices>
+    </browserProvider>
+  </browserProviders>
+</testProject>
